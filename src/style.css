@@ -1,0 +1,248 @@
+/* Grundläggande stilar och färgvariabler */
+:root {
+  --primary-color: #4caf50;
+  --primary-light: #81c784;
+  --primary-dark: #388e3c;
+  --secondary-color: #2196f3;
+  --accent-color: #ff9800;
+  --danger-color: #f44336;
+  --background-light: #f5f5f5;
+  --text-dark: #333;
+  --border-radius: 8px;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  color: var(--primary-dark);
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Spelarhantering */
+.player-management {
+  background-color: white;
+  padding: 25px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.player-list {
+  margin-bottom: 20px;
+}
+
+.player-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px;
+  background-color: white;
+  border: 2px solid #e0e0e0;
+  margin-bottom: 8px;
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+}
+
+.player-item.active {
+  background-color: var(--primary-light);
+  border-color: var(--primary-color);
+  transform: translateX(10px);
+}
+
+.player-name {
+  font-weight: 500;
+  flex-grow: 1;
+}
+
+.player-controls {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+#playerName {
+  padding: 10px;
+  border: 2px solid #e0e0e0;
+  border-radius: var(--border-radius);
+  flex-grow: 1;
+  font-size: 16px;
+}
+
+/* Knappar */
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+#addPlayer {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+#addPlayer:hover {
+  background-color: var(--primary-dark);
+}
+
+.button-small {
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+.button-delete {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.button-delete:hover {
+  background-color: #d32f2f;
+}
+
+/* Aktiv spelare sektion */
+.active-player {
+  background: linear-gradient(135deg, white, var(--primary-light));
+  padding: 25px;
+  border-radius: var(--border-radius);
+  margin: 30px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dice-fields {
+  display: flex;
+  gap: 15px;
+  margin: 15px 0;
+  justify-content: center;
+}
+
+.dice {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  font-size: 28px;
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.dice:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.2);
+}
+
+#calculateScore {
+  background-color: var(--secondary-color);
+  color: white;
+  width: 100%;
+  margin-top: 15px;
+}
+
+#calculateScore:hover {
+  background-color: #1976d2;
+}
+
+/* Poängalternativ */
+.score-options {
+  background-color: white;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  margin: 30px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#possibleScores {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  margin-top: 15px;
+}
+
+#possibleScores button {
+  background-color: var(--accent-color);
+  color: white;
+  width: 100%;
+}
+
+#possibleScores button:hover {
+  background-color: #f57c00;
+}
+
+/* Poängtavla */
+.scoreboard {
+  background-color: white;
+  padding: 25px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.scoreboard table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 20px;
+}
+
+.scoreboard th,
+.scoreboard td {
+  border: 1px solid #e0e0e0;
+  padding: 12px;
+  text-align: center;
+}
+
+.scoreboard th {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 500;
+}
+
+.scoreboard tr:nth-child(even) {
+  background-color: #f8f8f8;
+}
+
+.scoreboard tr:hover {
+  background-color: #f0f0f0;
+}
+
+.current-player {
+  background-color: var(--primary-light) !important;
+  font-weight: bold;
+}
+
+/* Responsiv design */
+@media (max-width: 768px) {
+  .dice-fields {
+    flex-wrap: wrap;
+  }
+
+  .dice {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
+
+  #possibleScores {
+    grid-template-columns: 1fr;
+  }
+}

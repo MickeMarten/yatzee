@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yahtzee Poängräkning</title>
+  <link rel="stylesheet" href="src/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Yatzy Poängräkning</h1>
+
+    <!-- Spelarlista och kontroller -->
+    <div class="player-management">
+      <h2>Spelare</h2>
+      <div class="player-list" id="playerList">
+        <!-- Spelare läggs till här dynamiskt -->
+      </div>
+
+      <div class="player-controls">
+        <input type="text" id="playerName" placeholder="Ange spelarnamn">
+        <button id="addPlayer">Lägg till spelare</button>
+      </div>
+    </div>
+
+    <!-- Aktiv spelare och tärningsinmatning -->
+    <div class="active-player">
+      <h2>Aktuell spelare: <span id="currentPlayer"></span></h2>
+      <div class="dice-input">
+        <h3>Ange tärningar:</h3>
+        <div class="dice-fields">
+          <input type="number" min="1" max="6" class="dice">
+          <input type="number" min="1" max="6" class="dice">
+          <input type="number" min="1" max="6" class="dice">
+          <input type="number" min="1" max="6" class="dice">
+          <input type="number" min="1" max="6" class="dice">
+        </div>
+        <button id="calculateScore">Beräkna möjliga poäng</button>
+      </div>
+    </div>
+
+    <!-- Poängalternativ -->
+    <div class="score-options" id="scoreOptions">
+      <h3>Möjliga poäng:</h3>
+      <div id="possibleScores"></div>
+    </div>
+
+    <!-- Poängtavla -->
+    <div class="scoreboard">
+      <h3>Poängtavla</h3>
+      <table id="scoreTable">
+        <thead>
+          <tr>
+            <th>Kategori</th>
+            <!-- Spelarkolumner läggs till dynamiskt -->
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Poängrader läggs till dynamiskt -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="src/main.js"></script>
+</body>
+
+</html>
